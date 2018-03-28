@@ -1,17 +1,12 @@
-// Update with your config settings.
+require("dotenv").load()
 
 module.exports = {
-
   development: {
-    client: 'pg',
-    connection: {
-      filename: `postgres:///${process.env.LOCAL_DATABASE_NAME}`
-    }
+    client: "pg",
+    connection: `postgres:///${process.env.LOCAL_DATABASE_NAME}`
   },
   production: {
-    client: 'postgresql',
-    connection: {
-      database: 'my_db',
-    }
+    client: "pg",
+    connection: `${process.env.DATABASE_URL}?ssl=true`
   }
 }
