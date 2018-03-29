@@ -8,6 +8,7 @@ function read(id) {
     return database("animal")
         .select()
         .where("id", id)
+        // .innerJoin('breed.id', 'animal.breedId')
         .first()  
 }
 
