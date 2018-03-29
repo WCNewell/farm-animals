@@ -1,6 +1,6 @@
 const express = require("express")  
 const router = express.Router()  
-
+ 
 const Animals = require("../models/animals")  
 
 // List
@@ -8,7 +8,10 @@ router.get("/", (request, response, next) => {
     Animals.list().then(animals => {
         response.status(200).json({ animals })  
     }).catch(next)  
-})  
+})
+//next catches the errors and throws them over to the
+//error handlers in app.js
+
 // Read
 router.get("/:id", (request, response, next) => {
     Animals.read(request.params.id).then(animal => {

@@ -1,4 +1,4 @@
-exports.seed = function (knex, Promise) {
+exports.seed = function(knex, Promise) {
   return knex("animal").del().then(() => {
     return knex("animal").insert([{
       id: 1,
@@ -6,10 +6,10 @@ exports.seed = function (knex, Promise) {
       breed: "Pig"
     }, {
       id: 2,
-      name: "Glooey",
+      name: "Mister Ed",
       breed: "Horse"
     }])
   }).then(() => {
-    return knex.raw("ALTER SEQUENCE animal_id_seq RESTART WITH 3");
+    return knex.raw("ALTER SEQUENCE animal_id_seq RESTART WITH 3")
   })
 }
