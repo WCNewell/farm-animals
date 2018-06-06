@@ -20,13 +20,13 @@ router.get("/:id", (request, response, next) => {
 })  
 // Create
 router.post("/", (request, response, next) => {
-    Animals.create(request.body.animal).then(animal => {
+    Animals.create(request.body).then(animal => {
         response.status(201).json({ animal })  
     }).catch(next)  
 })  
 // Update
 router.put("/:id", (request, response, next) => {
-    Animals.update(request.params.id, request.body.animal).then(animal => {
+    Animals.update(request.params.id, request.body).then(animal => {
         response.status(201).json({ animal })  
     }).catch(next)  
 })  
